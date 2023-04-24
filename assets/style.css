@@ -1,0 +1,14 @@
+body {
+    background-image: url("images/world_map_comp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 10%;
+}
+
+.main_object {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: antiquewhite;
+    text-align: center;
+    padding: 2%;
+    margin: 10%;
+}
