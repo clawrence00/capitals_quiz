@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/world_map_comp.jpg");
+    background-image: url("images/world_map_comp.jpg"), linear-gradient(to right, #ae7646 , #ebc499);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0% 10%;
