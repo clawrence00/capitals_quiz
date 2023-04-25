@@ -5,16 +5,25 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    overflow-y: hidden;
 }
 
 /* Main section of quiz */
 .main_object {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     color: antiquewhite;
     text-align: center;
     padding: 2%;
-    margin: 40vh;
+    margin: 10%;
+    font-size: large;
 }
 
 /* Score header */
+#score_header {
+    text-align: left;
+}
 
+/* class to hide elements */
+.hide {
+    display: none;
+}
