@@ -1,14 +1,15 @@
 body {
-    background-image: url("images/world_map_comp.jpg"), linear-gradient(to right, #ae7646 , #ebc499);
+    background-image: url("images/world_map_comp.jpg") , linear-gradient(to right, #ae7646 , #ebc499);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0% 10%;
+    height: 100vh;
 }
 
+/* Styling for main section of quiz */
 .main_object {
     background-color: rgba(0, 0, 0, 0.5);
     color: antiquewhite;
     text-align: center;
     padding: 2%;
-    margin: 10%;
+    margin: 40vh;
 }
