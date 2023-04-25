@@ -23,6 +23,11 @@ body {
     text-align: left;
 }
 
+/* button styling */
+.btn-primary {
+    
+}
+
 /* class to hide elements */
 .hide {
     display: none;
