@@ -1,3 +1,5 @@
+/* Webpage background */
+/* Using viewheight credit to Cem Eygi Media */
 body {
     background-image: url("images/world_map_comp.jpg") , linear-gradient(to right, #ae7646 , #ebc499);
     background-repeat: no-repeat;
@@ -5,7 +7,7 @@ body {
     height: 100vh;
 }
 
-/* Styling for main section of quiz */
+/* Main section of quiz */
 .main_object {
     background-color: rgba(0, 0, 0, 0.5);
     color: antiquewhite;
@@ -13,3 +15,6 @@ body {
     padding: 2%;
     margin: 40vh;
 }
+
+/* Score header */
+
