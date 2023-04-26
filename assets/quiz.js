@@ -88,11 +88,11 @@ for (let i = 0; i < questions.length; i++) {
 
 // manipulate HTML by adding innerHTML
 
-question.innerHTML.classList.remove("hide") = questions[i].capital;
-answerA.innerHTML.classList.remove("hide") = questions[i].a;
-answerB.innerHTML.classList.remove("hide") = questions[i].b;
-answerC.innerHTML.classList.remove("hide") = questions[i].c;
-answerD.innerHTML.classList.remove("hide") = questions[i].d;
+question.innerHTML = questions[i].capital;
+answerA.innerHTML = questions[i].a;
+answerB.innerHTML = questions[i].b;
+answerC.innerHTML = questions[i].c;
+answerD.innerHTML = questions[i].d;
 
 // Show question and answers
 
@@ -107,3 +107,14 @@ answerD.classList.remove("hide");
 
 welcome.classList.add("hide");
 start.classList.add("hide");
+
+// if else statement for answer
+
+$("#answers").children.click( function () {
+    if ($(this).includes(questions[i].correct)) {
+        this.classList.add("true");
+    } else {
+        this.classList.add("false");
+        $("#answers").children.includes(questions[i].correct).classList.add("true");
+    };
+ });
