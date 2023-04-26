@@ -1,8 +1,10 @@
 // get elements and assign variables
 const score = document.getElementById('score');
+const scoreHeader = document.getElementById('score_header');
 const welcome = document.getElementById('welcome');
 const question = document.getElementById('question');
 const start = document.getElementById('start');
+const answers = document.getElementById('answers');
 const answerA = document.getElementById('answerA');
 const answerB = document.getElementById('answerB');
 const answerC = document.getElementById('answerC');
@@ -76,45 +78,46 @@ let questions = [
     correct : "Ottawa"},
 ];
 
-// for loop that I think i'll need...
+$( "#startBtn" ).click( function () {
+    // for loop to get quiz question and answers
 
-for (let i = 0; i < questions.length; i++) {
+    var i;
+    for (let i = 0; i < questions.length; i++) {
     questions[i].capital = `Question ${[i+1]}: What is the capital city of ${questions[i].capital}?`;
     questions[i].a = `a) ${questions[i].a}`;
     questions[i].b = `b) ${questions[i].b}`;
     questions[i].c = `c) ${questions[i].c}`;
     questions[i].d = `d) ${questions[i].d}`;
-};
+    }
 
-// manipulate HTML by adding innerHTML
+    // Show question and answers
+    
+    scoreHeader.classList.remove("hide");
+    question.classList.remove("hide");
+    answers.classList.remove("hide");
+        
+    // Hide welcome and start
+    
+    welcome.classList.add("hide");
+    start.classList.add("hide");
 
-question.innerHTML = questions[i].capital;
-answerA.innerHTML = questions[i].a;
-answerB.innerHTML = questions[i].b;
-answerC.innerHTML = questions[i].c;
-answerD.innerHTML = questions[i].d;
-
-// Show question and answers
-
-score.classList.remove("hide");
-question.classList.remove("hide");
-answerA.classList.remove("hide");
-answerB.classList.remove("hide");
-answerC.classList.remove("hide");
-answerD.classList.remove("hide");
-
-// Hide welcome and start
-
-welcome.classList.add("hide");
-start.classList.add("hide");
-
-// if else statement for answer
-
-$("#answers").children.click( function () {
-    if ($(this).includes(questions[i].correct)) {
-        this.classList.add("true");
-    } else {
-        this.classList.add("false");
-        $("#answers").children.includes(questions[i].correct).classList.add("true");
-    };
- });
+ 
+    // manipulate HTML by adding innerHTML
+    
+    question.innerHTML = questions[0].capital;
+    answerA.innerHTML = questions[0].a;
+    answerB.innerHTML = questions[0].b;
+    answerC.innerHTML = questions[0].c;
+    answerD.innerHTML = questions[0].d;
+    
+    // if else statement for answer
+    
+    $( "#answers.children" ).click( function () {
+        if ($(this).includes(questions[i].correct)) {
+            this.classList.add("true");
+        } else {
+            this.classList.add("false");
+            $("#answers").children.includes(questions[i].correct).classList.add("true");
+        };
+     });
+    });
