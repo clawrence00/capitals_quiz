@@ -17,61 +17,72 @@ let questions = [
     b : "Canberra",
     c : "St. John's",
     d : "Bogota",
-    answer : "Canberra"},
+    correct : "Canberra"},
 
     {capital : "France",
     a : "Lisbon",
     b : "Paris",
     c : "Prague",
     d : "Rome",
-    answer : "Paris"},
+    correct : "Paris"},
 
     {capital : "Egypt",
     a : "Doha",
     b : "Warsaw",
     c : "Cairo",
     d : "Nassau",
-    answer : "Cairo"},
+    correct : "Cairo"},
 
     {capital : "India",
     a : "New Delhi",
     b : "Berlin",
     c : "Dhaka",
     d : "Baku",
-    answer : "New Delhi"},
+    correct : "New Delhi"},
 
     {capital : "Peru",
     a : "Copenhagen",
     b : "Asunción",
     c : "Lima",
     d : "Minsk",
-    answer : "Lima"},
+    correct : "Lima"},
 
     {capital : "Croatia",
     a : "Budapest",
     b : "Tallinn",
     c : "Oslo",
     d : "Stockholm",
-    answer : "Stockholm"},
+    correct : "Stockholm"},
 
     {capital : "Indonesia",
     a : "Havana",
     b : "Dublin",
     c : "Jakarta",
     d : "Taipei",
-    answer : "Jakarta"},
+    correct : "Jakarta"},
 
     {capital : "Switzerland",
     a : "Riga",
     b : "Bern",
     c : "Vienna",
     d : "Kuala Lumpur",
-    answer : "Bern"},
+    correct : "Bern"},
 
     {capital : "Canada",
     a : "Ottawa",
     b : "Vilnius",
     c : "Beijing",
     d : "Wellington",
-    answer : "Ottawa"},
-]
+    correct : "Ottawa"},
+];
+
+// for loop that I think i'll need...
+
+for (let = i; i < questions.length; i++) {
+    questions[i].capital = question.`Question ${[i]+1}: What is the capital city of ${questions[i].capital}?`.innerHTML.classList.remove("hide");
+    questions[i].a = answerA.`a) ${questions[i].a}`.innerHTML.classList.remove("hide");
+    questions[i].b = answerB.`a) ${questions[i].b}`.innerHTML.classList.remove("hide");
+    questions[i].c = answerC.`a) ${questions[i].c}`.innerHTML.classList.remove("hide");
+    questions[i].d = answerD.`a) ${questions[i].d}`.innerHTML.classList.remove("hide");
+}
+
