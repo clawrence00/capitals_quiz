@@ -88,6 +88,7 @@ $( "#startBtn" ).click( function () {
     questions[i].b = `b) ${questions[i].b}`;
     questions[i].c = `c) ${questions[i].c}`;
     questions[i].d = `d) ${questions[i].d}`;
+    questions[i].correct = questions[i].correct;
     }
 
     // Show question and answers
@@ -111,13 +112,11 @@ $( "#startBtn" ).click( function () {
     answerD.innerHTML = questions[0].d;
     
     // if else statement for answer
-    
-    $( "#answers.children" ).click( function () {
-        if ($(this).includes(questions[i].correct)) {
-            this.classList.add("true");
+
+    $( "#answers button" ).click( function () {
+        if ($(this) == questions[0].correct)) {
+            this.classList.add("btn-success");
         } else {
-            this.classList.add("false");
-            $("#answers").children.includes(questions[i].correct).classList.add("true");
+            this.classList.add("btn-danger");
         };
-     });
-    });
+});
