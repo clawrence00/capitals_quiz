@@ -7,7 +7,7 @@ const answerA = document.getElementById('answerA');
 const answerB = document.getElementById('answerB');
 const answerC = document.getElementById('answerC');
 const answerD = document.getElementById('answerD');
-const start = document.getElementById('retry');
+const retry = document.getElementById('retry');
 
 // Quiz questions
 
@@ -78,11 +78,32 @@ let questions = [
 
 // for loop that I think i'll need...
 
-for (let = i; i < questions.length; i++) {
-    questions[i].capital = question.`Question ${[i]+1}: What is the capital city of ${questions[i].capital}?`.innerHTML.classList.remove("hide");
-    questions[i].a = answerA.`a) ${questions[i].a}`.innerHTML.classList.remove("hide");
-    questions[i].b = answerB.`a) ${questions[i].b}`.innerHTML.classList.remove("hide");
-    questions[i].c = answerC.`a) ${questions[i].c}`.innerHTML.classList.remove("hide");
-    questions[i].d = answerD.`a) ${questions[i].d}`.innerHTML.classList.remove("hide");
-}
+for (let i = 0; i < questions.length; i++) {
+    questions[i].capital = `Question ${[i+1]}: What is the capital city of ${questions[i].capital}?`;
+    questions[i].a = `a) ${questions[i].a}`;
+    questions[i].b = `b) ${questions[i].b}`;
+    questions[i].c = `c) ${questions[i].c}`;
+    questions[i].d = `d) ${questions[i].d}`;
+};
 
+// manipulate HTML by adding innerHTML
+
+question.innerHTML.classList.remove("hide") = questions[i].capital;
+answerA.innerHTML.classList.remove("hide") = questions[i].a;
+answerB.innerHTML.classList.remove("hide") = questions[i].b;
+answerC.innerHTML.classList.remove("hide") = questions[i].c;
+answerD.innerHTML.classList.remove("hide") = questions[i].d;
+
+// Show question and answers
+
+score.classList.remove("hide");
+question.classList.remove("hide");
+answerA.classList.remove("hide");
+answerB.classList.remove("hide");
+answerC.classList.remove("hide");
+answerD.classList.remove("hide");
+
+// Hide welcome and start
+
+welcome.classList.add("hide");
+start.classList.add("hide");
