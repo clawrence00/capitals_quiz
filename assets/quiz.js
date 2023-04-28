@@ -1,15 +1,19 @@
 // // get elements and assign variables
-// var score = document.getElementById('score');
-// var scoreHeader = document.getElementById('score_header');
-// var welcome = document.getElementById('welcome');
+
+score = document.getElementById('score');
+
+scoreHeader = document.getElementById('score_header');
+welcome = document.getElementById('welcome');
 // var question = document.getElementById('question');
-// var start = document.getElementById('start');
+
+start = document.getElementById('start');
 // var answers = document.getElementById('answers');
 // var answerA = document.getElementById('answerA');
 // var answerB = document.getElementById('answerB');
 // var answerC = document.getElementById('answerC');
 // var answerD = document.getElementById('answerD');
-// var retry = document.getElementById('retry');
+
+retry = document.getElementById('retry');
 
 // // Quiz questions
 
@@ -127,43 +131,54 @@ async function populate() {
     const request = new Request(requestURL);
   
     const response = await fetch(request);
-    const superHeroes = await response.json();
+    const countriesCities = await response.json();
   
-    populateQuestions(superHeroes);
-  
+    populateQuestion(countriesCities);
   }
 
+  function populateQuestion(obj) {
 
-function populateQuestions(obj) {
-    const section = document.querySelector('section');
-    const heroes = obj.members;
-  
-    for (const hero of heroes) {
-      const myArticle = document.createElement('article');
-      const myH2 = document.createElement('h2');
-      const myPara1 = document.createElement('p');
-      const myPara2 = document.createElement('p');
-      const myPara3 = document.createElement('p');
-      const myList = document.createElement('ul');
-  
-      myH2.textContent = hero.name;
-      myPara1.textContent = `Secret identity: ${hero.secretIdentity}`;
-      myPara2.textContent = `Age: ${hero.age}`;
-      myPara3.textContent = 'Superpowers:';
-  
-      const superPowers = hero.powers;
-      for (const power of superPowers) {
-        const listItem = document.createElement('li');
-        listItem.textContent = power;
-        myList.appendChild(listItem);
-      }
-  
-      myArticle.appendChild(myH2);
-      myArticle.appendChild(myPara1);
-      myArticle.appendChild(myPara2);
-      myArticle.appendChild(myPara3);
-      myArticle.appendChild(myList);
-  
-      section.appendChild(myArticle);
-    }
+    const question = document.getElementById('question');
+
+    for (var i = 0; i < obj.length; i++) {
+
+    question.innerHTML = `Question ${[i + 1]}: What is the capital city of ${obj[i].country}?`;
+
+    const answerA = document.getElementById('answerA');
+    const answerB = document.getElementById('answerB');
+    const answerC = document.getElementById('answerC');
+    const answerD = document.getElementById('answerD');
+
+    answerA.innerHTML = `a) ${obj[i].city}`;
+    answerB.innerHTML = `b) ${obj[2].city}`;
+    answerC.innerHTML = `c) ${obj[3].city}`;
+    answerD.innerHTML = `d) ${obj[4].city}`;
+
   }
+// if else statement for answer
+
+$( "#answers button" ).click( function (obj) {
+        if ($(this) == `a) obj[i].city}`) {
+        this.classList.add("btn-success");
+        } else {
+        this.classList.add("btn-danger");
+        };
+})};
+
+$( "#startBtn" ).click( function () {
+    
+    populate();
+    
+    score = 0;
+
+    // Show question and answers
+            
+    scoreHeader.classList.remove("hide");
+    question.classList.remove("hide");
+    answers.classList.remove("hide");
+                
+    // Hide welcome and start
+            
+    welcome.classList.add("hide");
+    start.classList.add("hide");
+});
