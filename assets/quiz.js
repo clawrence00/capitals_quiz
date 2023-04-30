@@ -1,5 +1,6 @@
 // get elements and assign variables
 scoreHeader = document.getElementById('score_header');
+scoreCount = document.getElementById('score');
 welcome = document.getElementById('welcome');
 answers = document.getElementById('answers');
 const start = document.getElementById('start');
@@ -18,6 +19,7 @@ const answerD = document.getElementById('answerD');
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
+retryButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
@@ -28,6 +30,8 @@ function startGame() {
     welcome.classList.add("hide");
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
+    score = 0;
+    scoreCount.innerHTML = score;
     scoreHeader.classList.remove("hide");
     questionElement.classList.remove('hide')
     answers.classList.remove("hide");
@@ -56,6 +60,7 @@ function showQuestion(question) {
 function resetState() {
     clearStatusClass(document.body)
     next.classList.add('hide')
+    retry.classList.add('hide')
     while (answerElement.firstChild) {
       answerElement.removeChild(answerElement.firstChild)
     }
@@ -71,8 +76,7 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
       next.classList.remove('hide')
     } else {
-      startButton.innerText = 'Restart'
-      startButton.classList.remove('hide')
+        showSummary()
     }
   }
   
@@ -80,6 +84,7 @@ function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
       element.classList.add('btn-success')
+      score++;
     } else {
       element.classList.add('btn-danger')
     }
@@ -88,6 +93,23 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove('btn-success')
     element.classList.remove('btn-danger')
+  }
+
+  function showSummary() {
+    welcome.classList.remove('hide');
+    questionElement.classList.add('hide')
+    answers.classList.add('hide')
+    welcome.innerHTML = `You got ${[ score ]} out of 10 correct! </br>`
+    if (score <= 2) {
+        document.welcome.appendChild(p) = 'Everyone starts somewhere, keep on learning!'
+    } else if (score <= 5) {
+        document.welcome.appendChild(p) = 'You need to brush up on your capital city knowledge. Keep trying!'
+    } else if (score <= 8) {
+        document.welcome.appendChild(p) = 'You have a good knowledge of capital cities!'
+    } else if (score <= 10) {
+        document.welcome.appendChild(p) = 'You really know your capitals!'
+    }
+    retry.classList.remove('hide');
   }
 
 // // Quiz questions
