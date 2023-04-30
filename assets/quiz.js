@@ -18,10 +18,10 @@ const answerD = document.getElementById('answerD');
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
-// nextButton.addEventListener('click', () => {
-//   currentQuestionIndex++
-//   setNextQuestion()
-// })
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex++
+  setNextQuestion()
+})
 
 function startGame() {
     start.classList.add('hide')
@@ -35,7 +35,7 @@ function startGame() {
   };
   
 function setNextQuestion() {
-    // resetState()
+    resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
@@ -53,42 +53,42 @@ function showQuestion(question) {
     })
 }
   
-// function resetState() {
-//     clearStatusClass(document.body)
-//     nextButton.classList.add('hide')
-//     while (answerButtonsElement.firstChild) {
-//       answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-//     }
-//   }
-  
-function selectAnswer(e) {
-//     const selectedButton = e.target
-//     const correct = selectedButton.dataset.correct
-//     setStatusClass(document.body, correct)
-//     Array.from(answerButtonsElement.children).forEach(button => {
-//       setStatusClass(button, button.dataset.correct)
-//     })
-//     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-//       nextButton.classList.remove('hide')
-//     } else {
-//       startButton.innerText = 'Restart'
-//       startButton.classList.remove('hide')
-//     }
+function resetState() {
+    clearStatusClass(document.body)
+    next.classList.add('hide')
+    while (answerElement.firstChild) {
+      answerElement.removeChild(answerElement.firstChild)
+    }
   }
   
-// function setStatusClass(element, correct) {
-//     clearStatusClass(element)
-//     if (correct) {
-//       element.classList.add('correct')
-//     } else {
-//       element.classList.add('wrong')
-//     }
-//   }
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerElement.children).forEach(button => {
+      setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+      next.classList.remove('hide')
+    } else {
+      startButton.innerText = 'Restart'
+      startButton.classList.remove('hide')
+    }
+  }
   
-// function clearStatusClass(element) {
-//     element.classList.remove('correct')
-//     element.classList.remove('wrong')
-//   }
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+      element.classList.add('btn-success')
+    } else {
+      element.classList.add('btn-danger')
+    }
+  }
+  
+function clearStatusClass(element) {
+    element.classList.remove('btn-success')
+    element.classList.remove('btn-danger')
+  }
 
 // // Quiz questions
 
@@ -139,12 +139,21 @@ const questions = [
         ]
     },
     {
-        capital : "Croatia",
+        capital : "Sweden",
         cities: [
             {text : "Budapest", correct: false },
             {text : "Tallinn", correct: false },
             {text : "Oslo", correct: false },
             {text : "Stockholm", correct: true },
+        ]
+    },
+    {
+        capital : "Croatia",
+        cities: [
+            {text : "Zagreb", correct: true },
+            {text : "Reykjavík", correct: false },
+            {text : "Sofia", correct: false },
+            {text : "Buenos Aires", correct: false },
         ]
     },
     {
