@@ -1,184 +1,177 @@
-// // get elements and assign variables
-
-score = document.getElementById('score');
-
+// get elements and assign variables
 scoreHeader = document.getElementById('score_header');
 welcome = document.getElementById('welcome');
-// var question = document.getElementById('question');
+answers = document.getElementById('answers');
+const start = document.getElementById('start');
+const next = document.getElementById('next');
+const retry = document.getElementById('retry');
+const startButton = document.getElementById('startBtn');
+const nextButton = document.getElementById('nextBtn');
+const retryButton = document.getElementById('retryBtn');
+const questionElement = document.getElementById('question')
+const answerElement = document.getElementById('answers')
+const answerA = document.getElementById('answerA');
+const answerB = document.getElementById('answerB');
+const answerC = document.getElementById('answerC');
+const answerD = document.getElementById('answerD');
 
-start = document.getElementById('start');
-// var answers = document.getElementById('answers');
-// var answerA = document.getElementById('answerA');
-// var answerB = document.getElementById('answerB');
-// var answerC = document.getElementById('answerC');
-// var answerD = document.getElementById('answerD');
+let shuffledQuestions, currentQuestionIndex
 
-retry = document.getElementById('retry');
+startButton.addEventListener('click', startGame)
+// nextButton.addEventListener('click', () => {
+//   currentQuestionIndex++
+//   setNextQuestion()
+// })
+
+function startGame() {
+    start.classList.add('hide')
+    welcome.classList.add("hide");
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    scoreHeader.classList.remove("hide");
+    questionElement.classList.remove('hide')
+    answers.classList.remove("hide");
+    setNextQuestion()
+  };
+  
+function setNextQuestion() {
+    // resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+}
+
+function showQuestion(question) {
+    questionElement.innerText = `Question ${[currentQuestionIndex + 1]}: What is the capital city of ${question.capital}?`
+    question.cities.forEach(city => {
+      const button = document.createElement('button')
+      button.innerText = city.text
+      button.classList.add('btn' , 'btn-primary')
+      if (city.correct) {
+        button.dataset.correct = city.correct
+      }
+      button.addEventListener('click', selectAnswer)
+      answerElement.appendChild(button)
+    })
+}
+  
+// function resetState() {
+//     clearStatusClass(document.body)
+//     nextButton.classList.add('hide')
+//     while (answerButtonsElement.firstChild) {
+//       answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+//     }
+//   }
+  
+function selectAnswer(e) {
+//     const selectedButton = e.target
+//     const correct = selectedButton.dataset.correct
+//     setStatusClass(document.body, correct)
+//     Array.from(answerButtonsElement.children).forEach(button => {
+//       setStatusClass(button, button.dataset.correct)
+//     })
+//     if (shuffledQuestions.length > currentQuestionIndex + 1) {
+//       nextButton.classList.remove('hide')
+//     } else {
+//       startButton.innerText = 'Restart'
+//       startButton.classList.remove('hide')
+//     }
+  }
+  
+// function setStatusClass(element, correct) {
+//     clearStatusClass(element)
+//     if (correct) {
+//       element.classList.add('correct')
+//     } else {
+//       element.classList.add('wrong')
+//     }
+//   }
+  
+// function clearStatusClass(element) {
+//     element.classList.remove('correct')
+//     element.classList.remove('wrong')
+//   }
 
 // // Quiz questions
 
-// let questions = [
-//     {capital : "Australia",
-//     a : "Seoul",
-//     b : "Canberra",
-//     c : "St. John's",
-//     d : "Bogota",
-//     correct : "Canberra"},
-
-//     {capital : "France",
-//     a : "Lisbon",
-//     b : "Paris",
-//     c : "Prague",
-//     d : "Rome",
-//     correct : "Paris"},
-
-//     {capital : "Egypt",
-//     a : "Doha",
-//     b : "Warsaw",
-//     c : "Cairo",
-//     d : "Nassau",
-//     correct : "Cairo"},
-
-//     {capital : "India",
-//     a : "New Delhi",
-//     b : "Berlin",
-//     c : "Dhaka",
-//     d : "Baku",
-//     correct : "New Delhi"},
-
-//     {capital : "Peru",
-//     a : "Copenhagen",
-//     b : "Asunción",
-//     c : "Lima",
-//     d : "Minsk",
-//     correct : "Lima"},
-
-//     {capital : "Croatia",
-//     a : "Budapest",
-//     b : "Tallinn",
-//     c : "Oslo",
-//     d : "Stockholm",
-//     correct : "Stockholm"},
-
-//     {capital : "Indonesia",
-//     a : "Havana",
-//     b : "Dublin",
-//     c : "Jakarta",
-//     d : "Taipei",
-//     correct : "Jakarta"},
-
-//     {capital : "Switzerland",
-//     a : "Riga",
-//     b : "Bern",
-//     c : "Vienna",
-//     d : "Kuala Lumpur",
-//     correct : "Bern"},
-
-//     {capital : "Canada",
-//     a : "Ottawa",
-//     b : "Vilnius",
-//     c : "Beijing",
-//     d : "Wellington",
-//     correct : "Ottawa"},
-// ];
-
-//     // for loop to get quiz question and answers
-
-//     for (let i = 0; i < questions.length; i++) {
-//         questions[i].capital = `Question ${[i + 1]}: What is the capital city of ${questions[i].capital}?`;
-//         questions[i].a = `a) ${questions[i].a}`;
-//         questions[i].b = `b) ${questions[i].b}`;
-//         questions[i].c = `c) ${questions[i].c}`;
-//         questions[i].d = `d) ${questions[i].d}`;
-    
-//         // manipulate HTML by adding innerHTML
-//         question.innerHTML = questions[i].capital;
-//         answerA.innerHTML = questions[i].a;
-//         answerB.innerHTML = questions[i].b;
-//         answerC.innerHTML = questions[i].c;
-//         answerD.innerHTML = questions[i].d;
-//         }
-
-// $( "#startBtn" ).click( function () {
-
-//     // Show question and answers
-    
-//     scoreHeader.classList.remove("hide");
-//     question.classList.remove("hide");
-//     answers.classList.remove("hide");
-        
-//     // Hide welcome and start
-    
-//     welcome.classList.add("hide");
-//     start.classList.add("hide");
-
- 
-
-    
-//     // if else statement for answer
-
-//     // $( "#answers button" ).click( function () {
-//     //     if ($(this) == questions[0].correct)) {
-//     //         this.classList.add("btn-success");
-//     //     } else {
-//     //         this.classList.add("btn-danger");
-//     //     };
-// });
-
-async function populate() {
-
-    const requestURL = 'https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-capital-city.json';
-    const request = new Request(requestURL);
-  
-    const response = await fetch(request);
-    const countriesCities = await response.json();
-  
-    populateQuestion(countriesCities);
-  }
-
-  function populateQuestion(obj) {
-
-    const question = document.getElementById('question');
-
-    for (var i = 0; i < obj.length; i++) {
-
-    question.innerHTML = `Question ${[i + 1]}: What is the capital city of ${obj[i].country}?`;
-
-    const answerA = document.getElementById('answerA');
-    const answerB = document.getElementById('answerB');
-    const answerC = document.getElementById('answerC');
-    const answerD = document.getElementById('answerD');
-
-    answerA.innerHTML = `a) ${obj[i].city}`;
-    answerB.innerHTML = `b) ${obj[2].city}`;
-    answerC.innerHTML = `c) ${obj[3].city}`;
-    answerD.innerHTML = `d) ${obj[4].city}`;
-
-  }
-// if else statement for answer
-
-$( "#answers button" ).click( function (obj) {
-        if ($(this) == `a) obj[i].city}`) {
-        this.classList.add("btn-success");
-        } else {
-        this.classList.add("btn-danger");
-        };
-})};
-
-$( "#startBtn" ).click( function () {
-    
-    populate();
-    
-    score = 0;
-
-    // Show question and answers
-            
-    scoreHeader.classList.remove("hide");
-    question.classList.remove("hide");
-    answers.classList.remove("hide");
-                
-    // Hide welcome and start
-            
-    welcome.classList.add("hide");
-    start.classList.add("hide");
-});
+const questions = [
+    {
+        capital : "Australia",
+        cities: [
+            {text: "Seoul", correct: false },
+            {text: "Canberra", correct: true },
+            {text: "St. John's", correct:false },
+            {text: "Bogota", correct:false}
+        ]
+    },
+    {
+        capital : "France",
+        cities: [
+            {text : "Lisbon", correct: false },
+            {text : "Paris", correct: true },
+            {text : "Prague", correct: false },
+            {text : "Rome", correct: false },
+        ]
+    },
+    {
+        capital : "Egypt",
+        cities: [
+            {text : "Doha", correct: false },
+            {text : "Warsaw", correct: false },
+            {text : "Cairo", correct: true },
+            {text : "Nassau", correct: false },
+        ]
+    },
+    {
+        capital : "India",
+        cities: [
+            {text : "New Delhi", correct: true },
+            {text : "Berlin", correct: false },
+            {text : "Dhaka", correct: false },
+            {text : "Baku", correct: false },
+        ]
+    },
+    {
+        capital : "Peru",
+        cities: [
+            {text : "Copenhagen", correct: false },
+            {text : "Asunción", correct: false },
+            {text : "Lima", correct: true },
+            {text : "Minsk", correct: false },
+        ]
+    },
+    {
+        capital : "Croatia",
+        cities: [
+            {text : "Budapest", correct: false },
+            {text : "Tallinn", correct: false },
+            {text : "Oslo", correct: false },
+            {text : "Stockholm", correct: true },
+        ]
+    },
+    {
+        capital : "Indonesia",
+        cities: [
+            {text : "Havana", correct: false },
+            {text : "Dublin", correct: false },
+            {text : "Jakarta", correct: true },
+            {text : "Taipei", correct: false },
+        ]
+    },
+    {
+        capital : "Switzerland",
+        cities: [
+            {text : "Riga", correct: false },
+            {text : "Bern", correct: true },
+            {text : "Vienna", correct: false },
+            {text : "Kuala Lumpur", correct: false },
+        ]
+    },
+    {
+        capital : "Canada",
+        cities: [
+            {text : "Ottawa", correct: true },
+            {text : "Vilnius", correct: false },
+            {text : "Beijing", correct: false },
+            {text : "Wellington", correct: false },
+        ]
+    }
+];
