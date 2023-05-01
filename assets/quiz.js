@@ -30,8 +30,7 @@ function startGame() {
     welcome.classList.add("hide");
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
-    score = 0;
-    scoreCount.innerHTML = score;
+    scoreCount = 0;
     scoreHeader.classList.remove("hide");
     questionElement.classList.remove('hide')
     answers.classList.remove("hide");
@@ -66,10 +65,7 @@ function resetState() {
     }
   }
   
-function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+function selectAnswer() {
     Array.from(answerElement.children).forEach(button => {
       setStatusClass(button, button.dataset.correct)
     })
@@ -84,7 +80,7 @@ function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
       element.classList.add('btn-success')
-      score++;
+      incrementScore();
     } else {
       element.classList.add('btn-danger')
     }
@@ -95,21 +91,30 @@ function clearStatusClass(element) {
     element.classList.remove('btn-danger')
   }
 
+// increment score function - adds 1 to score
+function incrementScore() {
+    document.getElementById('score').innerText = ++scoreCount;
+}
+
   function showSummary() {
     welcome.classList.remove('hide');
     questionElement.classList.add('hide')
     answers.classList.add('hide')
-    welcome.innerHTML = `You got ${[ score ]} out of 10 correct! </br>`
-    if (score <= 2) {
-        document.welcome.appendChild(p) = 'Everyone starts somewhere, keep on learning!'
-    } else if (score <= 5) {
-        document.welcome.appendChild(p) = 'You need to brush up on your capital city knowledge. Keep trying!'
-    } else if (score <= 8) {
-        document.welcome.appendChild(p) = 'You have a good knowledge of capital cities!'
-    } else if (score <= 10) {
-        document.welcome.appendChild(p) = 'You really know your capitals!'
-    }
     retry.classList.remove('hide');
+
+    welcome.innerHTML = `You got ${[ scoreCount ]} out of 10 correct! </br>`
+
+    var p = document.createElement('p');
+
+    if (scoreCount <= 2) {
+        welcome.appendChild(p) = 'Everyone starts somewhere, keep on learning!'
+    } else if (scoreCount <= 5) {
+        welcome.appendChild(p) = 'You need to brush up on your capital city knowledge. Keep trying!'
+    } else if (scoreCount <= 8) {
+        welcome.appendChild(p) = 'You have a good knowledge of capital cities!'
+    } else if (scoreCount <= 10) {
+        welcome.appendChild(p) = 'You really know your capitals!'
+    } 
   }
 
 // // Quiz questions
