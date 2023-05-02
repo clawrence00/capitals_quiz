@@ -95,13 +95,17 @@ function incrementScore() {
     var p = document.createElement('p');
 
     if (scoreCount <= 2) {
-        welcome.appendChild(p) = 'Everyone starts somewhere, keep on learning!'
+        p.innerText = 'Everyone starts somewhere, keep on learning!';
+        $ ( "#welcome" ).append(p);
     } else if (scoreCount <= 5) {
-        welcome.appendChild(p) = 'You need to brush up on your capital city knowledge. Keep trying!'
+        p.innerText = 'You need to brush up on your capital city knowledge. Keep trying!';
+        $ ( "#welcome" ).append(p);
     } else if (scoreCount <= 8) {
-        welcome.appendChild(p) = 'You have a good knowledge of capital cities!'
+        p.innerText = 'You have a good knowledge of capital cities!';
+        $ ( "#welcome" ).append(p);
     } else if (scoreCount <= 10) {
-        welcome.appendChild(p) = 'You really know your capitals!'
+        p.innerText = 'You really know your capitals!';
+        $ ( "#welcome" ).append(p);
     } 
   }
 
