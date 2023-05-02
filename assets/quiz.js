@@ -153,7 +153,7 @@ const questions = [
         correct : "New Delhi"
     },
     {
-        ccountry : "Peru",
+        country : "Peru",
         cities: [
             {text : "Copenhagen"},
             {text : "Asunción"},
