@@ -43,7 +43,7 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-    questionElement.innerText = `Question ${[currentQuestionIndex + 1]}: What is the capital city of ${question.capital}?`
+    questionElement.innerText = `Question ${[currentQuestionIndex + 1]}: What is the capital city of ${question.country}?`
     question.cities.forEach(city => {
       const button = document.createElement('button')
       button.innerText = city.text
@@ -136,7 +136,7 @@ function incrementScore() {
 
 const questions = [
     {
-        capital : "Australia",
+        country : "Australia",
         cities: [
             {text: "Seoul"},
             {text: "Canberra"},
@@ -146,7 +146,7 @@ const questions = [
         correct : "Canberra"
     },
     {
-        capital : "France",
+        country : "France",
         cities: [
             {text : "Lisbon"},
             {text : "Paris"},
@@ -156,7 +156,7 @@ const questions = [
         correct : "Paris"
     },
     {
-        capital : "Egypt",
+        country : "Egypt",
         cities: [
             {text : "Doha"},
             {text : "Warsaw"},
@@ -166,7 +166,7 @@ const questions = [
         correct : "Cairo"
     },
     {
-        capital : "India",
+        country : "India",
         cities: [
             {text : "New Delhi"},
             {text : "Berlin"},
@@ -176,7 +176,7 @@ const questions = [
         correct : "New Delhi"
     },
     {
-        capital : "Peru",
+        ccountry : "Peru",
         cities: [
             {text : "Copenhagen"},
             {text : "Asunción"},
@@ -186,7 +186,7 @@ const questions = [
         correct : "Lima"
     },
     {
-        capital : "Sweden",
+        country : "Sweden",
         cities: [
             {text : "Budapest"},
             {text : "Tallinn"},
@@ -196,7 +196,7 @@ const questions = [
         correct : "Stockholm"
     },
     {
-        capital : "Croatia",
+        country : "Croatia",
         cities: [
             {text : "Zagreb"},
             {text : "Reykjavík"},
@@ -206,7 +206,7 @@ const questions = [
         correct : "Zagreb"
     },
     {
-        capital : "Indonesia",
+        country : "Indonesia",
         cities: [
             {text : "Havana"},
             {text : "Dublin"},
@@ -216,7 +216,7 @@ const questions = [
         correct : "Jakarta"
     },
     {
-        capital : "Switzerland",
+        country : "Switzerland",
         cities: [
             {text : "Riga"},
             {text : "Bern"},
@@ -226,7 +226,7 @@ const questions = [
         correct : "Bern"
     },
     {
-        capital : "Canada",
+        country : "Canada",
         cities: [
             {text : "Ottawa"},
             {text : "Vilnius"},
