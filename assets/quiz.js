@@ -64,6 +64,8 @@ function resetState() {
 // if else statement for answer
 
 function checkAnswer() {
+//disable buttons code .find() method https://stackoverflow.com/questions/11503534/jquery-vs-document-queryselectorall .prop() method https://stackoverflow.com/questions/1594952/jquery-disable-enable-submit-button 
+    $( "#answers" ).find( "button" ).prop("disabled", true);
     if (this.innerText == shuffledQuestions[currentQuestionIndex].correct) {
         this.classList.add("btn-success");
         incrementScore()
