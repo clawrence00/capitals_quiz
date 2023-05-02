@@ -1,8 +1,8 @@
 // get elements and assign variables
-scoreHeader = document.getElementById('score_header');
-scoreCount = document.getElementById('score');
-welcome = document.getElementById('welcome');
-answers = document.getElementById('answers');
+const scoreHeader = document.getElementById('score_header');
+var scoreCount = document.getElementById('score');
+const welcome = document.getElementById('welcome');
+const answers = document.getElementById('answers');
 const start = document.getElementById('start');
 const next = document.getElementById('next');
 const retry = document.getElementById('retry');
@@ -29,12 +29,12 @@ function startGame() {
     start.classList.add('hide')
     welcome.classList.add("hide");
     shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
+    currentQuestionIndex = 0;
     scoreCount = 0;
     scoreHeader.classList.remove("hide");
     questionElement.classList.remove('hide')
     answers.classList.remove("hide");
-    setNextQuestion()
+    setNextQuestion();
   };
   
 function setNextQuestion() {
@@ -48,16 +48,12 @@ function showQuestion(question) {
       const button = document.createElement('button')
       button.innerText = city.text
       button.classList.add('btn' , 'btn-primary')
-      if (city.correct) {
-        button.dataset.correct = city.correct
-      }
-      button.addEventListener('click', selectAnswer)
+      button.addEventListener('click', checkAnswer)
       answerElement.appendChild(button)
     })
 }
   
 function resetState() {
-    clearStatusClass(document.body)
     next.classList.add('hide')
     retry.classList.add('hide')
     while (answerElement.firstChild) {
@@ -65,31 +61,48 @@ function resetState() {
     }
   }
   
-function selectAnswer() {
-    Array.from(answerElement.children).forEach(button => {
-      setStatusClass(button, button.dataset.correct)
-    })
+// if else statement for answer
+
+function checkAnswer() {
+    if (this.innerText == shuffledQuestions[currentQuestionIndex].correct) {
+        this.classList.add("btn-success");
+        incrementScore()
+    } else {
+        this.classList.add("btn-danger");
+    }
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-      next.classList.remove('hide')
+        next.classList.remove('hide')
     } else {
         showSummary()
     }
-  }
+};
+
+
+// function selectAnswer() {
+//     Array.from(answerElement.children).forEach(button => {
+//       setStatusClass(button, button.dataset.correct)
+//     })
+//     if (shuffledQuestions.length > currentQuestionIndex + 1) {
+//       next.classList.remove('hide')
+//     } else {
+//         showSummary()
+//     }
+//   }
   
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
-    if (correct) {
-      element.classList.add('btn-success')
-      incrementScore();
-    } else {
-      element.classList.add('btn-danger')
-    }
-  }
+// function setStatusClass(element, correct) {
+//     clearStatusClass(element)
+//     if (correct) {
+//       element.classList.add('btn-success')
+//       incrementScore();
+//     } else {
+//       element.classList.add('btn-danger')
+//     }
+//   }
   
-function clearStatusClass(element) {
-    element.classList.remove('btn-success')
-    element.classList.remove('btn-danger')
-  }
+// function clearStatusClass(element) {
+//     element.classList.remove('btn-success')
+//     element.classList.remove('btn-danger')
+//   }
 
 // increment score function - adds 1 to score
 function incrementScore() {
@@ -123,91 +136,101 @@ const questions = [
     {
         capital : "Australia",
         cities: [
-            {text: "Seoul", correct: false },
-            {text: "Canberra", correct: true },
-            {text: "St. John's", correct:false },
-            {text: "Bogota", correct:false}
-        ]
+            {text: "Seoul"},
+            {text: "Canberra"},
+            {text: "St. John's"},
+            {text: "Bogota"},
+        ],
+        correct : "Canberra"
     },
     {
         capital : "France",
         cities: [
-            {text : "Lisbon", correct: false },
-            {text : "Paris", correct: true },
-            {text : "Prague", correct: false },
-            {text : "Rome", correct: false },
-        ]
+            {text : "Lisbon"},
+            {text : "Paris"},
+            {text : "Prague"},
+            {text : "Rome"},
+        ],
+        correct : "Paris"
     },
     {
         capital : "Egypt",
         cities: [
-            {text : "Doha", correct: false },
-            {text : "Warsaw", correct: false },
-            {text : "Cairo", correct: true },
-            {text : "Nassau", correct: false },
-        ]
+            {text : "Doha"},
+            {text : "Warsaw"},
+            {text : "Cairo"},
+            {text : "Nassau"},
+        ],
+        correct : "Cairo"
     },
     {
         capital : "India",
         cities: [
-            {text : "New Delhi", correct: true },
-            {text : "Berlin", correct: false },
-            {text : "Dhaka", correct: false },
-            {text : "Baku", correct: false },
-        ]
+            {text : "New Delhi"},
+            {text : "Berlin"},
+            {text : "Dhaka"},
+            {text : "Baku"},
+        ],
+        correct : "New Delhi"
     },
     {
         capital : "Peru",
         cities: [
-            {text : "Copenhagen", correct: false },
-            {text : "Asunción", correct: false },
-            {text : "Lima", correct: true },
-            {text : "Minsk", correct: false },
-        ]
+            {text : "Copenhagen"},
+            {text : "Asunción"},
+            {text : "Lima"},
+            {text : "Minsk"},
+        ],
+        correct : "Lima"
     },
     {
         capital : "Sweden",
         cities: [
-            {text : "Budapest", correct: false },
-            {text : "Tallinn", correct: false },
-            {text : "Oslo", correct: false },
-            {text : "Stockholm", correct: true },
-        ]
+            {text : "Budapest"},
+            {text : "Tallinn"},
+            {text : "Oslo"},
+            {text : "Stockholm"},
+        ],
+        correct : "Stockholm"
     },
     {
         capital : "Croatia",
         cities: [
-            {text : "Zagreb", correct: true },
-            {text : "Reykjavík", correct: false },
-            {text : "Sofia", correct: false },
-            {text : "Buenos Aires", correct: false },
-        ]
+            {text : "Zagreb"},
+            {text : "Reykjavík"},
+            {text : "Sofia"},
+            {text : "Buenos Aires"},
+        ],
+        correct : "Zagreb"
     },
     {
         capital : "Indonesia",
         cities: [
-            {text : "Havana", correct: false },
-            {text : "Dublin", correct: false },
-            {text : "Jakarta", correct: true },
-            {text : "Taipei", correct: false },
-        ]
+            {text : "Havana"},
+            {text : "Dublin"},
+            {text : "Jakarta"},
+            {text : "Taipei"},
+        ],
+        correct : "Jakarta"
     },
     {
         capital : "Switzerland",
         cities: [
-            {text : "Riga", correct: false },
-            {text : "Bern", correct: true },
-            {text : "Vienna", correct: false },
-            {text : "Kuala Lumpur", correct: false },
-        ]
+            {text : "Riga"},
+            {text : "Bern"},
+            {text : "Vienna"},
+            {text : "Kuala Lumpur"},
+        ],
+        correct : "Bern"
     },
     {
         capital : "Canada",
         cities: [
-            {text : "Ottawa", correct: true },
-            {text : "Vilnius", correct: false },
-            {text : "Beijing", correct: false },
-            {text : "Wellington", correct: false },
-        ]
+            {text : "Ottawa"},
+            {text : "Vilnius"},
+            {text : "Beijing"},
+            {text : "Wellington"},
+        ],
+        correct : "Ottawa"
     }
 ];
