@@ -11,10 +11,6 @@ const nextButton = document.getElementById('nextBtn');
 const retryButton = document.getElementById('retryBtn');
 const questionElement = document.getElementById('question')
 const answerElement = document.getElementById('answers')
-const answerA = document.getElementById('answerA');
-const answerB = document.getElementById('answerB');
-const answerC = document.getElementById('answerC');
-const answerD = document.getElementById('answerD');
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -61,7 +57,7 @@ function resetState() {
     }
   }
   
-// if else statement for answer
+// function to disable answer buttons, if else statement checks for correct answer, second if else to check number of questions left
 
 function checkAnswer() {
 //disable buttons code .find() method https://stackoverflow.com/questions/11503534/jquery-vs-document-queryselectorall .prop() method https://stackoverflow.com/questions/1594952/jquery-disable-enable-submit-button 
@@ -79,43 +75,20 @@ function checkAnswer() {
     }
 };
 
-
-// function selectAnswer() {
-//     Array.from(answerElement.children).forEach(button => {
-//       setStatusClass(button, button.dataset.correct)
-//     })
-//     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-//       next.classList.remove('hide')
-//     } else {
-//         showSummary()
-//     }
-//   }
-  
-// function setStatusClass(element, correct) {
-//     clearStatusClass(element)
-//     if (correct) {
-//       element.classList.add('btn-success')
-//       incrementScore();
-//     } else {
-//       element.classList.add('btn-danger')
-//     }
-//   }
-  
-// function clearStatusClass(element) {
-//     element.classList.remove('btn-success')
-//     element.classList.remove('btn-danger')
-//   }
-
 // increment score function - adds 1 to score
 function incrementScore() {
     document.getElementById('score').innerText = ++scoreCount;
 }
 
+// shows summary at end of quiz for user
+
   function showSummary() {
     welcome.classList.remove('hide');
-    questionElement.classList.add('hide')
-    answers.classList.add('hide')
     retry.classList.remove('hide');
+
+    questionElement.classList.add('hide')
+    scoreHeader.classList.add("hide");
+    answers.classList.add('hide')
 
     welcome.innerHTML = `You got ${[ scoreCount ]} out of 10 correct! </br>`
 
