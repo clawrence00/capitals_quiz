@@ -27,3 +27,8 @@ body {
 .hide {
     display: none;
 }
+
+.btn {
+    width: 124px;
+    margin: 1%;
+}
