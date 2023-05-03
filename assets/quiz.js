@@ -1,6 +1,5 @@
 // get elements and assign variables
 const scoreHeader = document.getElementById('score_header');
-var scoreCount = document.getElementById('score');
 const welcome = document.getElementById('welcome');
 const answers = document.getElementById('answers');
 const start = document.getElementById('start');
@@ -27,6 +26,7 @@ function startGame() {
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0;
     scoreCount = 0;
+    document.getElementById('score').innerText = scoreCount;
     scoreHeader.classList.remove("hide");
     questionElement.classList.remove('hide')
     answers.classList.remove("hide");
@@ -109,7 +109,7 @@ function incrementScore() {
     } 
   }
 
-// // Quiz questions
+// Quiz questions
 
 const questions = [
     {
