@@ -34,7 +34,7 @@ Welcome to my second milestone project with the Code Institute. The purpose of t
 ### Wireframes
 Before any code was written wireframes were created using [Balsamiq](https://balsamiq.com/) for each page on three different screen sizes; mobile, tablet and desktop.
 
-[See all wireframes here](#https://github.com/clawrence00/capitals_quiz/blob/main/documentation/images/wireframes.png)
+[See all wireframes here](https://github.com/clawrence00/capitals_quiz/blob/main/documentation/images/wireframes.png)
 
 ### Design Choices
 
