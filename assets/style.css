@@ -6,7 +6,6 @@ body {
     background-size: cover;
     height: 100vh;
     overflow-y: hidden;
-    font-family: 'Merriweather Sans', sans-serif;
 }
 
 /* Main section of quiz */
@@ -18,6 +17,7 @@ body {
     margin: 10%;
     font-size: large;
     max-width: 95%;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 /* Score header */
