@@ -6,6 +6,7 @@ body {
     background-size: cover;
     height: 100vh;
     overflow-y: hidden;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 /* Main section of quiz */
@@ -16,6 +17,7 @@ body {
     padding: 2%;
     margin: 10%;
     font-size: large;
+    max-width: 95%;
 }
 
 /* Score header */
@@ -28,19 +30,15 @@ body {
     display: none;
 }
 
-.container {
-    width: 90%;
-}
-
 .btn {
     width: 124px;
     margin: 1%;
 }
 
-/* media queries */
+/* media queries
 
 @media (min-width: 576px) {
     .container, .container-sm {
         max-width: 700px;
     }
-}
+} */
