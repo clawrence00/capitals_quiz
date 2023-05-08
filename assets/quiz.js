@@ -28,7 +28,7 @@ function startGame() {
     welcome.classList.add("hide");
     shuffledQuestions = questions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
-    let scoreCount = 0;
+    scoreCount = 0;
     document.getElementById("score").innerText = scoreCount;
     scoreHeader.classList.remove("hide");
     questionElement.classList.remove("hide");
