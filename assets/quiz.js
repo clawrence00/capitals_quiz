@@ -13,6 +13,7 @@ const answerElement = document.getElementById('answers')
 
 let shuffledQuestions, currentQuestionIndex
 
+// Event listeners for button clicks
 startButton.addEventListener('click', startGame)
 retryButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -20,6 +21,7 @@ nextButton.addEventListener('click', () => {
   setNextQuestion()
 })
 
+// startGame function
 function startGame() {
     start.classList.add('hide')
     welcome.classList.add("hide");
@@ -33,11 +35,13 @@ function startGame() {
     setNextQuestion();
   };
   
+// resets state and shows next question
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+// shows question, loops through questions array to create answer buttons
 function showQuestion(question) {
     questionElement.innerText = `Question ${[currentQuestionIndex + 1]}: What is the capital city of ${question.country}?`
     question.cities.forEach(city => {
@@ -48,7 +52,8 @@ function showQuestion(question) {
       answerElement.appendChild(button)
     })
 }
-  
+
+// removes answer buttons, hides next and retry buttons
 function resetState() {
     next.classList.add('hide')
     retry.classList.add('hide')
@@ -58,7 +63,6 @@ function resetState() {
   }
   
 // function to disable answer buttons, if else statement checks for correct answer, second if else to check number of questions left
-
 function checkAnswer() {
 //disable buttons code .find() method https://stackoverflow.com/questions/11503534/jquery-vs-document-queryselectorall .prop() method https://stackoverflow.com/questions/1594952/jquery-disable-enable-submit-button 
     $( "#answers" ).find( "button" ).prop("disabled", true);
