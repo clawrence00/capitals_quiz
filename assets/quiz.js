@@ -76,7 +76,7 @@ function checkAnswer() {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         next.classList.remove("hide");
     } else {
-        showSummary();
+        setTimeout(showSummary, 1000);
     }
 }
 
