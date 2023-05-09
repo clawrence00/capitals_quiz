@@ -111,7 +111,7 @@ function incrementScore() {
     } else if (scoreCount <= 10) {
         p.innerText = "You really know your capitals!";
         $ ( "#welcome" ).append(p);
-    };
+    }
 }
 
 // Quiz questions
