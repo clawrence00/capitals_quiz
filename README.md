@@ -21,20 +21,28 @@ Welcome to my second milestone project with the Code Institute. The purpose of t
 ## UX & UI
 ### Project Goals
 
-The purpose of the project is to create a web application that 
+The goal of the project is to create a multiple choice quiz using html, css and JavaScript. The quiz will be multiple choice about conutries and their capitals. The quiz will be not only entertaining but educational.
 
 ### Customer Goals
 
-T
+The quiz must respond to user input and give feedback on submitted answers.
 
 ### Features
 
+- A central container will show the question and repsective answers.
+- The answers will be buttons that will change colour depend on if the user has answered correctly or incorrectly.
+- The users score will be tallied and shown on screen during the quiz
+- At the end of the quiz the final score will be shown with a summary statement related to the score achieved.
 
 ### User Stories
 
 As a user of the web application the design should be intuitive.
 
-The webpage must be interactive 
+The webpage must be interactive, delivering feedback to help with learning.
+
+The application must be intuitive, with features where they would be expected to be on multiple screen sizes.
+
+The webpage must be responsive so that it can be experienced on mobile, tablet and desktop.
 
 ### Wireframes
 Before any code was written wireframes were created using [Balsamiq](https://balsamiq.com/) for each page on three different screen sizes; mobile, tablet and desktop.
@@ -93,11 +101,13 @@ For incementing the correct answer score I revisited this Code Institute lesson:
 
 ### Validation
 
-The HTML for the welcome message and a question with answers was checked using the W3C markup validation service. There were no issues to report.
+The HTML for the welcome message and a question with answers was checked using the [W3C markup validation service](https://validator.w3.org/). There were no issues to report.
 
-The css was checked using the W3C CSS validation service. There were no issues to report.
+The css was checked using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/). There were no issues to report.
 
+The JavaScript has been checked using [JS Lint](https://www.jslint.com/). Mulitple issues were found. Missing semi-colons and, ironically, semi-colons where they weren't necessary were the majority of issues. 
 
+All evidence of the validation can be found in the [validation](https://github.com/clawrence00/capitals_quiz/blob/main/documentation/validation) folder.
 
 ---
 
