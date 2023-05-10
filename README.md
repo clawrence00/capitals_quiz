@@ -1,4 +1,4 @@
-#Milestone Project 2: Capitals Around the World!
+# Milestone Project 2: Capitals Around the World!
 
 ![Mockup on different screen sizes of home page](documentation/images/mockup.png)
 Welcome to my second milestone project with the Code Institute. The purpose of this project is to produce an interactive front end web application, built with HTML, CSS and JavaScript.
