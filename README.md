@@ -71,6 +71,14 @@ The styling, again, has been kept simple using bootstraps built in library. Due 
 
 The background image used is of a world map with some pins scattered across the globe. These aren't capital cities but the image sets the tone for the quiz, it looks adventurous and interesting. If the main image does not load the background would be a colour gradient from the dark to light. The start and end colours for this gradient were picked from the world map image therefore if the image didn't load then the rest of the site will still look similar to how it was intended to be.
 
+![Welcome content](documentation/images/pic1.png)
+
+![Correct answer](documentation/images/pic2.png)
+
+![Incorrect answer](documentation/images/pic3.png)
+
+![Summary](documentation/images/pic4.png)
+
 ---
 
 ## Credits
