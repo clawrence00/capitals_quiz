@@ -13,6 +13,7 @@ const answerElement = document.getElementById("answers");
 
 let shuffledQuestions;
 let currentQuestionIndex;
+let scoreCount;
 
 // Event listeners for button clicks
 startButton.addEventListener("click", startGame);
@@ -45,7 +46,7 @@ function setNextQuestion() {
 // shows question, loops through questions array to create answer buttons
 function showQuestion(question) {
     questionElement.innerText = `Question ${[currentQuestionIndex + 1]}: What is the capital city of ${question.country}?`;
-    question.cities.forEach((city) => {
+    question.cities.forEach(function(city) {
       const button = document.createElement("button");
       button.innerText = city.text;
       button.classList.add("btn" , "btn-primary");
@@ -67,7 +68,7 @@ function resetState() {
 function checkAnswer() {
 //disable buttons code .find() method https://stackoverflow.com/questions/11503534/jquery-vs-document-queryselectorall .prop() method https://stackoverflow.com/questions/1594952/jquery-disable-enable-submit-button
     $( "#answers" ).find( "button" ).prop("disabled", true);
-    if (this.innerText == shuffledQuestions[currentQuestionIndex].correct) {
+    if (this.innerText === shuffledQuestions[currentQuestionIndex].correct) {
         this.classList.add("btn-success");
         incrementScore();
     } else {
@@ -97,7 +98,7 @@ function incrementScore() {
 
     welcome.innerHTML = `You got ${[ scoreCount ]} out of 10 correct! </br>`;
 
-    var p = document.createElement("p");
+    let p = document.createElement("p");
 
     if (scoreCount <= 2) {
         p.innerText = "Everyone starts somewhere, keep on learning!";
