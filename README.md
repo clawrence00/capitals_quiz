@@ -1,7 +1,9 @@
 #Milestone Project 2: Capitals Around the World!
 
 ![Mockup on different screen sizes of home page](documentation/images/mockup.png)
-Welcome to my second milestone project with the Code Institute. The purpose of this project is to produce an interactive front end web application, built with HTML, CSS and JavaScript. Please find my deployed site [here](https://clawrence00.github.io/capitals_quiz/).
+Welcome to my second milestone project with the Code Institute. The purpose of this project is to produce an interactive front end web application, built with HTML, CSS and JavaScript.
+
+**Please find my deployed site [here](https://clawrence00.github.io/capitals_quiz/).**
 
 ---
 
@@ -11,7 +13,7 @@ Welcome to my second milestone project with the Code Institute. The purpose of t
 - JavaScript
 - Balsamiq
 - Bootstrap 5.3.0
-- jQuery
+- jQuery 3.6.4
 - Google Fonts
 - GitHub
 - codeanywhere
@@ -21,7 +23,7 @@ Welcome to my second milestone project with the Code Institute. The purpose of t
 ## UX & UI
 ### Project Goals
 
-The goal of the project is to create a multiple choice quiz using html, css and JavaScript. The quiz will be multiple choice about conutries and their capitals. The quiz will be not only entertaining but educational.
+The goal of the project is to create a multiple choice quiz using HTML, CSS and JavaScript. The quiz will be multiple choice about countries and their capitals. The quiz will be not only entertaining but educational.
 
 ### Customer Goals
 
@@ -29,7 +31,7 @@ The quiz must respond to user input and give feedback on submitted answers.
 
 ### Features
 
-- A central container will show the question and repsective answers.
+- A central container will show the question and respective answers.
 - The answers will be buttons that will change colour depend on if the user has answered correctly or incorrectly.
 - The users score will be tallied and shown on screen during the quiz
 - At the end of the quiz the final score will be shown with a summary statement related to the score achieved.
@@ -57,7 +59,7 @@ Merriweather Sans was chosen as the main font with sans serif as back up. This f
 
 #### Colours
 
-Colours have been kept simple. The HTML content has been enclosed in a black coloured container which has been given some opacity so that the main image of the world map can still be seen behind. Due to the dark colour of the container a light coloured font has been chosen. Initially I thought to use white as it contrasts with the dark background however I settled on antiquewhite as this has a softer feel to it due to the sharp contrast being redeuced. The colour also compliments the many colours found in the background image.
+Colours have been kept simple. The HTML content has been enclosed in a black coloured container which has been given some opacity so that the main image of the world map can still be seen behind. Due to the dark colour of the container a light coloured font has been chosen. Initially I thought to use white as it contrasts with the dark background however I settled on antiquewhite as this has a softer feel to it due to the sharp contrast being reduced. The colour also compliments the many colours found in the background image.
 
 For the buttons built in bootstrap classes were used partly for simplicity but also as they look well suited to the quiz format. 
 
@@ -67,7 +69,7 @@ The styling, again, has been kept simple using bootstraps built in library. Due 
 
 #### Images
 
-The background image used is of a world map with some pins scattered across the globe. These arent capital cities but the image sets the tone for the quiz, it looks adventurous and interesting. If the main image does not load the background would be a colour gradient from the dark to light. The start and end colours for this gradient were picked from the world map image therefore if the image didnt load then the rest of the site will still look similar to how it was intended to be.
+The background image used is of a world map with some pins scattered across the globe. These aren't capital cities but the image sets the tone for the quiz, it looks adventurous and interesting. If the main image does not load the background would be a colour gradient from the dark to light. The start and end colours for this gradient were picked from the world map image therefore if the image didn't load then the rest of the site will still look similar to how it was intended to be.
 
 ---
 
@@ -85,7 +87,7 @@ This tutorial was used to create the function delay:
 
 - [Prince Varshney - tutorialspoint](https://www.tutorialspoint.com/How-to-delay-a-JavaScript-function-call-using-JavaScript)
 
-For incementing the correct answer score I revisited this Code Institute lesson:
+For incrementing the correct answer score I revisited this Code Institute lesson:
 
 - [AJGreaves - CodeInstitute](https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode/tree/master/03-displaying-the-question-and-answer/04-updating-the-scores)
 
@@ -103,9 +105,9 @@ For incementing the correct answer score I revisited this Code Institute lesson:
 
 The HTML for the welcome message and a question with answers was checked using the [W3C markup validation service](https://validator.w3.org/). There were no issues to report.
 
-The css was checked using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/). There were no issues to report.
+The CSS was checked using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/). There were no issues to report.
 
-The JavaScript has been checked using [JS Lint](https://www.jslint.com/). Mulitple issues were found. Missing semi-colons and, ironically, semi-colons where they weren't necessary were the majority of issues. 
+The JavaScript has been checked using [JS Lint](https://www.jslint.com/). Multiple issues were found. Missing semi-colons and, ironically, semi-colons where they weren't necessary were the majority of issues. 
 
 All evidence of the validation can be found in the [validation](https://github.com/clawrence00/capitals_quiz/blob/main/documentation/validation) folder.
 
@@ -114,20 +116,20 @@ All evidence of the validation can be found in the [validation](https://github.c
 ### Deployment
 The website was deployed using GitHub Pages. Here are the following steps required to **deploy the site**;
 
-1) Select the repository.
-2) In the repository navigation click 'Settings'.
-3) In the list on the left, under 'Code and automation' select 'Pages'.
-4) Under 'Build and deployment', 'Source' should be 'Deploy from branch'.
-5) Under 'Build and deployment', 'Branch' select 'main'. The folder should be /(root). Click 'Save'.
+1. Select the repository.
+2. In the repository navigation click 'Settings'.
+3. In the list on the left, under 'Code and automation' select 'Pages'.
+4. Under 'Build and deployment', 'Source' should be 'Deploy from branch'.
+5. Under 'Build and deployment', 'Branch' select 'main'. The folder should be /(root). Click 'Save'.
 
 Your site should now be live and hosted by GitHub Pages. It may take a minute or two for the site to become available.
 
 To **clone this repository**;
 
-1) On GitHub.com select the main page of the repository.
-2) Click the green 'Code' button.
-3) Select HTTPS. Click the clipboard icon to copy the repository URL.
-4) Create a location on your machine where you want the repository to be cloned.
-5) Using Git Bash change the working directory to the location where you want the repository to be cloned.
-6) Type _git clone_ and paste the URL of the repository, copied in step 3.
-7) Press enter. A local clone has now been created on your machine.  
+1. On GitHub.com select the main page of the repository.
+2. Click the green 'Code' button.
+3. Select HTTPS. Click the clipboard icon to copy the repository URL.
+4. Create a location on your machine where you want the repository to be cloned.
+5. Using Git Bash change the working directory to the location where you want the repository to be cloned.
+6. Type _git clone_ and paste the URL of the repository, copied in step 3.
+7. Press enter. A local clone has now been created on your machine.  
