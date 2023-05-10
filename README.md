@@ -107,7 +107,9 @@ The HTML for the welcome message and a question with answers was checked using t
 
 The CSS was checked using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/). There were no issues to report.
 
-The JavaScript has been checked using [JS Lint](https://www.jslint.com/). Multiple issues were found. Missing semi-colons and, ironically, semi-colons where they weren't necessary were the majority of issues. 
+The JavaScript has been checked using [JS Lint](https://www.jslint.com/). Multiple issues were found. Missing semi-colons and, ironically, semi-colons where they weren't necessary were the majority of issues.
+
+Lighthouse in Chrome developer tools was used to assess the performance of the page. The overall performance was good. It was suggested to remove the script links to Bootstrap and jQuery however these are required as part of the application. The search engine optimisation gave an error as a meta description was not present. A meta description of the web page has been added to the head of the HTML document.
 
 All evidence of the validation can be found in the [validation](https://github.com/clawrence00/capitals_quiz/blob/main/documentation/validation) folder.
 
