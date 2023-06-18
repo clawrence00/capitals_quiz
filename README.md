@@ -117,11 +117,14 @@ For incrementing the correct answer score I revisited this Code Institute lesson
 - User experience is tested such as browser compatability and user screen sizes (mobile or desktop).
 - There can be a high error rate as a human is performing the testing and certain scenarios can be missed.
 
+### Testing for this project
+Manual testing was used throughout the developement of this project and following deployment. This approach was taken as the input required from the user to run the application are button clicks, no input data is required. Manual testing was also used as the focus of the project was user experience. The screen resolution was manually tested during development and mobile and tablet devices in portrait and landscape were also tested using Chrome developer tools.
+
 ### Bugs & Fixes
 
 - Following the addition of the incrementScore function it was found that when retrying the quiz the score would not return to 0. This was fixed by the adding similar code from the incrementScore function to the startGame function but without using the increment (++) operator.
 
-- A bug was been observed where the text for one of the longer named cities (Kuala Lumpur) appears on two lines within the button. This was found whilst being tested by a user on an Apple iPhone XR. The error could not be replicated  using Chrome Developer tools. The button width has been made more than large enough to fit the text within the button.
+- A bug has been observed where the text for one of the longer named cities (Kuala Lumpur) appears on two lines within the button. This was found whilst being tested by a user on an Apple iPhone XR. The error could not be replicated using Chrome Developer tools. The button width has been made more than large enough to fit the text within the button.
 
 ### Validation
 
