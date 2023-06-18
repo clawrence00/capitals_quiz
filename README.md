@@ -103,6 +103,13 @@ For incrementing the correct answer score I revisited this Code Institute lesson
  
 ## Testing
 
+### Principals of Testing
+#### Automated Testing
+- Known as Test Driven Development (TDD)
+- Tests are written before any code therefore errors are picked up early in the development process.
+- Testing is quick. Testing frameworks such as Jest are used to reliably run tests in parallel.
+- Testing is only as good as the questions being asked. User experience is not tested.
+
 ### Bugs & Fixes
 
 - Following the addition of the incrementScore function it was found that when retrying the quiz the score would not return to 0. This was fixed by the adding similar code from the incrementScore function to the startGame function but without using the increment (++) operator.
