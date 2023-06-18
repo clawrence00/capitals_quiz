@@ -108,7 +108,14 @@ For incrementing the correct answer score I revisited this Code Institute lesson
 - Known as Test Driven Development (TDD)
 - Tests are written before any code therefore errors are picked up early in the development process.
 - Testing is quick. Testing frameworks such as Jest are used to reliably run tests in parallel.
+- Tests are specific to the code that is being tested
 - Testing is only as good as the questions being asked. User experience is not tested.
+#### Manual Testing
+- Known as Behaviour Driven Development (BDD)
+- Testing is performed from the perspective of the user, after code has been written.
+- Testing can be time consuming and resource hungry depending on the size of the project.
+- User experience is tested such as browser compatability and user screen sizes (mobile or desktop).
+- There can be a high error rate as a human is performing the testing and certain scenarios can be missed.
 
 ### Bugs & Fixes
 
