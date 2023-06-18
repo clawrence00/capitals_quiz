@@ -114,11 +114,11 @@ For incrementing the correct answer score I revisited this Code Institute lesson
 - Known as Behaviour Driven Development (BDD)
 - Testing is performed from the perspective of the user, after code has been written.
 - Testing can be time consuming and resource hungry depending on the size of the project.
-- User experience is tested such as browser compatability and user screen sizes (mobile or desktop).
+- User experience is tested such as browser compatibility and user screen sizes (mobile or desktop).
 - There can be a high error rate as a human is performing the testing and certain scenarios can be missed.
 
 ### Testing for this project
-Manual testing was used throughout the developement of this project and following deployment. This approach was taken as the input required from the user to run the application are button clicks, no input data is required. Manual testing was also used as the focus of the project was user experience. The screen resolution was manually tested during development and mobile and tablet devices in portrait and landscape were also tested using Chrome developer tools.
+Manual testing was used throughout the development of this project and following deployment. This approach was taken as the input required from the user to run the application are button clicks, no input data is required. Manual testing was also used as the focus of the project was user experience. The screen resolution was manually tested during development and mobile and tablet devices in portrait and landscape were also tested using Chrome developer tools.
 
 ### Bugs & Fixes
 
